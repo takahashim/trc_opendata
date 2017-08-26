@@ -8,7 +8,7 @@ require 'json'
 
 JSON_COLS = %w[isbn	title	subtitle	author	author2	edition	publisher	publisher2	publishing_date	page	size	product_part	series	series2	series3	volume_title	price	set_price]
 
-DATA_DIR = "doc"
+DATA_DIR = "docs"
 
 def rename_ext(path, ext)
   Pathname(path).sub_ext(ext).to_s
