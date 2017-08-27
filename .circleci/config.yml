@@ -1,8 +1,28 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "hello world"
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: ruby-scrape-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle install --retry=3 --path vendor/bundle
+
+      # Store bundle cache
+      - type: cache-save
+        key: ruby-scrape-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # do scraping
+      - run:
+          name: do scraping
+          command: |
+            bundle exec scrape_trc.rb
