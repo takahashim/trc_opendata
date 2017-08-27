@@ -1,4 +1,4 @@
-# trc_opendata
+# TRC新刊図書オープンデータ(trc_opendata) 非公式アーカイブ
 
 [TRC新刊図書オープンデータ](http://www.trc.co.jp/trc_opendata/)の書誌情報ファイルをアーカイブするものです。
 
