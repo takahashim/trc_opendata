@@ -2,7 +2,6 @@
 
 require 'zip'
 require 'pathname'
-
 require 'csv'
 require 'json'
 
