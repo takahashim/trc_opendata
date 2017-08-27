@@ -25,4 +25,4 @@ jobs:
       - run:
           name: do scraping
           command: |
-            bundle exec scrape_trc.rb
+            bundle exec ruby scrape_trc.rb
