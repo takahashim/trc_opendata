@@ -43,6 +43,6 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               git add zips
               git add docs
-              git commit -m 'update docs and zips'
+              git commit --author='takahashim bot <takahashimm+bot@gmail.com>' -m 'update docs and zips'
               git push origin master
             fi
