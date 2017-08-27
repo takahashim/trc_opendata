@@ -34,3 +34,9 @@ jobs:
           name: do scraping
           command: |
             bundle exec ruby scrape_trc.rb
+      - deploy:
+          name: push to github
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push origin master
+            fi
