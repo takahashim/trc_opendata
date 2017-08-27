@@ -4,6 +4,8 @@ require 'open-uri'
 require 'nokogiri'
 require 'uri'
 
+require_relative 'unzip_trc'
+
 ZIP_DIR = "zips"
 
 def download_index_page(url)
@@ -29,13 +31,19 @@ def find_zip_path(page, url)
   end
 end
 
-def main
+def do_scrape
   url = "http://www.trc.co.jp/trc_opendata/"
   page = download_index_page(url)
   find_zip_path(page, url) do |zip_url, path|
     zip_content = open(zip_url).read
     File.write(path, zip_content)
+
+    txt_path = unzip_tsv(path)
+    json_path = rename_ext(txt_path, ".json")
+    File.write(json_path, tsv2json(txt_path))
   end
 end
 
-main
+if __FILE__ == $0
+  do_scrape
+end
