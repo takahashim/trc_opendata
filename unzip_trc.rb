@@ -29,7 +29,7 @@ def tsv2json(file)
   rows.map(&:to_hash).to_json
 end
 
-def main
+if __FILE__ == $0
   file = ARGV[0]
   if ARGV.size != 1
     puts "usage: gettsv <filename>"
@@ -40,6 +40,4 @@ def main
   json_path = rename_ext(txt_path, ".json")
   File.write(json_path, tsv2json(txt_path))
 end
-
-main
 
