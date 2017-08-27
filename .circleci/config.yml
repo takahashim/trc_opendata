@@ -41,5 +41,8 @@ jobs:
           name: push to github
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git add zips
+              git add docs
+              git commit -m 'update docs and zips'
               git push origin master
             fi
