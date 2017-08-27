@@ -6,13 +6,15 @@
 
 オリジナルのzipファイルは[zips](./zips/)に、zipファイルを展開したファイルは[docs](./docs/)以下に置いてあります。
 
-### TSV形式ファイル
+### TSV形式ファイル (*.txt, *.tsv)
 
-オリジナルの配布ファイルはTSV(tab separated values)形式ですが、拡張子は`.txt`になっています。これを`.tsv`に変更してあります。この変更により、github上で閲覧した際に表形式で表示されます。
+オリジナルの配布ファイルはTSV(tab separated values)形式ですが、拡張子は`.txt`になっています。これはこのまま保存しています。
+
+さらに、これに「収録項目」の各項目をヘッダとして追加したファイルを`.tsv`にrenameして保存しています。こちらのファイルは、githubの拡張子対応により、github上で閲覧した際に表形式で表示されます。
 
 例: https://github.com/takahashim/trc_opendata/blob/master/docs/TRCOpenBibData_20170826.tsv
 
-### JSON形式ファイル
+### JSON形式ファイル (*.json)
 
 TSVを変換したJSON形式のファイルも配布しています。ファイル名は同じで、拡張子を`.json`にしたものです。
 
