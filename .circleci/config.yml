@@ -34,6 +34,9 @@ jobs:
           name: do scraping
           command: |
             bundle exec ruby scrape_trc.rb
+      - add_ssh_keys:
+          fingerprints:
+            - "c1:a8:20:4a:6e:e3:24:80:85:fd:a2:54:4b:8a:e0:20"
       - deploy:
           name: push to github
           command: |
