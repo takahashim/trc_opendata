@@ -25,11 +25,8 @@ def unzip_tsv(file)
 end
 
 def tsv2json(file)
-  rows = CSV.read(file, col_sep: "\t", headers: false)
-  all_list = rows.map do |row|
-    Hash[JSON_COLS.zip(row)]
-  end
-  all_list.to_json
+  rows = CSV.read(file, col_sep: "\t", headers: JSON_COLS)
+  rows.map(&:to_hash).to_json
 end
 
 def main
