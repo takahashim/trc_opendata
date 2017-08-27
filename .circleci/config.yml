@@ -41,8 +41,10 @@ jobs:
           name: push to github
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git config user.email "takahashimm+bot@gmail.com"
+              git config user.name "takahashim bot"
               git add zips
               git add docs
-              git commit --author='takahashim bot <takahashimm+bot@gmail.com>' -m 'update docs and zips'
+              git commit -m 'update docs and zips'
               git push origin master
             fi
