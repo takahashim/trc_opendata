@@ -48,3 +48,4 @@ jobs:
               git commit -m 'update docs and zips'
               git push origin master
             fi
+            echo "done."
